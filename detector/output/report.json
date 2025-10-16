@@ -1,0 +1,611 @@
+{
+  "metadata": {
+    "generated_at": "2025-10-05T00:48:45.125550",
+    "total_files_analyzed": 1,
+    "total_smells_found": 13,
+    "active_detectors": [
+      "LongMethod",
+      "GodClass",
+      "DuplicatedCode",
+      "LargeParameterList",
+      "MagicNumbers",
+      "FeatureEnvy"
+    ],
+    "config_used": {
+      "language": "python",
+      "LongMethod": {
+        "enabled": true,
+        "max_lines": 30,
+        "max_complexity": 10
+      },
+      "GodClass": {
+        "enabled": true,
+        "max_fields": 15,
+        "max_methods": 20,
+        "max_lines": 200
+      },
+      "DuplicatedCode": {
+        "enabled": true,
+        "min_similarity": 0.8,
+        "min_chunk_size": 3
+      },
+      "LargeParameterList": {
+        "enabled": true,
+        "max_parameters": 5
+      },
+      "MagicNumbers": {
+        "enabled": true,
+        "min_occurrences": 3,
+        "whitelist": [
+          0,
+          1,
+          -1
+        ],
+        "min_value": 2,
+        "max_value": 1000
+      },
+      "FeatureEnvy": {
+        "enabled": true,
+        "min_foreign_accesses": 3,
+        "foreign_access_ratio": 1.5
+      },
+      "report": {
+        "format": "json",
+        "include_metrics": true,
+        "show_active_smells": true
+      }
+    }
+  },
+  "summary": {
+    "smells_by_type": {
+      "LongMethod": 3,
+      "GodClass": 1,
+      "DuplicatedCode": 2,
+      "LargeParameterList": 2,
+      "MagicNumbers": 2,
+      "FeatureEnvy": 3
+    },
+    "smells_by_file": {
+      "sample_smelly_code.py": 13
+    },
+    "severity_breakdown": {
+      "high": 3,
+      "medium": 10,
+      "low": 0
+    }
+  },
+  "smells": [
+    {
+      "smell_type": "LongMethod",
+      "file_path": "sample_smelly_code.py",
+      "line_number": 272,
+      "severity": "medium",
+      "message": "Method 'main' is too long (37 lines, max: 30)",
+      "details": {
+        "method_name": "main",
+        "line_count": 37,
+        "max_lines": 30,
+        "complexity": 1,
+        "max_complexity": 10
+      }
+    },
+    {
+      "smell_type": "LongMethod",
+      "file_path": "sample_smelly_code.py",
+      "line_number": 33,
+      "severity": "high",
+      "message": "Method 'process_reservation_and_order' is too long (118 lines, max: 30)",
+      "details": {
+        "method_name": "process_reservation_and_order",
+        "line_count": 118,
+        "max_lines": 30,
+        "complexity": 16,
+        "max_complexity": 10
+      }
+    },
+    {
+      "smell_type": "LongMethod",
+      "file_path": "sample_smelly_code.py",
+      "line_number": 33,
+      "severity": "high",
+      "message": "Method 'process_reservation_and_order' has high complexity (16, max: 10)",
+      "details": {
+        "method_name": "process_reservation_and_order",
+        "line_count": 118,
+        "max_lines": 30,
+        "complexity": 16,
+        "max_complexity": 10
+      }
+    },
+    {
+      "smell_type": "GodClass",
+      "file_path": "sample_smelly_code.py",
+      "line_number": 6,
+      "severity": "medium",
+      "message": "Class 'RestaurantManager' is too large (208 lines, max: 200)",
+      "details": {
+        "class_name": "RestaurantManager",
+        "field_count": 0,
+        "max_fields": 15,
+        "method_count": 5,
+        "max_methods": 20,
+        "line_count": 208,
+        "max_lines": 200
+      }
+    },
+    {
+      "smell_type": "DuplicatedCode",
+      "file_path": "sample_smelly_code.py",
+      "line_number": 169,
+      "severity": "medium",
+      "message": "Duplicated code detected between 'calculate_loyalty_reward' and 'apply_happy_hour_discount' (similarity: 0.88)",
+      "details": {
+        "function1": "calculate_loyalty_reward",
+        "function2": "apply_happy_hour_discount",
+        "function1_line": 169,
+        "function2_line": 188,
+        "similarity": 0.8823529411764706,
+        "min_similarity": 0.8,
+        "function1_lines": 19,
+        "function2_lines": 26
+      }
+    },
+    {
+      "smell_type": "DuplicatedCode",
+      "file_path": "sample_smelly_code.py",
+      "line_number": 220,
+      "severity": "medium",
+      "message": "Duplicated code detected between 'get_best_selling_items' and 'get_top_guests' (similarity: 0.80)",
+      "details": {
+        "function1": "get_best_selling_items",
+        "function2": "get_top_guests",
+        "function1_line": 220,
+        "function2_line": 256,
+        "similarity": 0.8,
+        "min_similarity": 0.8,
+        "function1_lines": 17,
+        "function2_lines": 16
+      }
+    },
+    {
+      "smell_type": "LargeParameterList",
+      "file_path": "sample_smelly_code.py",
+      "line_number": 33,
+      "severity": "high",
+      "message": "Method 'process_reservation_and_order' has too many parameters (27, max: 5)",
+      "details": {
+        "method_name": "process_reservation_and_order",
+        "parameter_count": 27,
+        "max_parameters": 5,
+        "parameters": [
+          "self",
+          "guest_id",
+          "table_id",
+          "reservation_time",
+          "party_size",
+          "special_requests",
+          "menu_items",
+          "dietary_restrictions",
+          "payment_method",
+          "loyalty_tier",
+          "discount_code",
+          "celebration_type",
+          "arrival_time",
+          "contact_phone",
+          "email_address",
+          "emergency_contact",
+          "special_instructions",
+          "group_name",
+          "corporate_account",
+          "vip_status",
+          "accessibility_needs",
+          "language_preference",
+          "communication_method",
+          "marketing_consent",
+          "data_sharing_consent",
+          "terms_accepted",
+          "id_verified"
+        ]
+      }
+    },
+    {
+      "smell_type": "LargeParameterList",
+      "file_path": "sample_smelly_code.py",
+      "line_number": 151,
+      "severity": "medium",
+      "message": "Method 'add_menu_item' has too many parameters (10, max: 5)",
+      "details": {
+        "method_name": "add_menu_item",
+        "parameter_count": 10,
+        "max_parameters": 5,
+        "parameters": [
+          "self",
+          "name",
+          "price",
+          "category",
+          "ingredients",
+          "prep_time",
+          "calories",
+          "allergens",
+          "portion_size",
+          "spice_level"
+        ]
+      }
+    },
+    {
+      "smell_type": "MagicNumbers",
+      "file_path": "sample_smelly_code.py",
+      "line_number": 293,
+      "severity": "medium",
+      "message": "Magic number '2' appears 4 times",
+      "details": {
+        "magic_number": 2,
+        "occurrences": 4,
+        "line_numbers": [
+          293,
+          76,
+          181,
+          206
+        ],
+        "min_occurrences": 3,
+        "whitelist": [
+          0,
+          1,
+          -1
+        ]
+      }
+    },
+    {
+      "smell_type": "MagicNumbers",
+      "file_path": "sample_smelly_code.py",
+      "line_number": 78,
+      "severity": "medium",
+      "message": "Magic number '3' appears 3 times",
+      "details": {
+        "magic_number": 3,
+        "occurrences": 3,
+        "line_numbers": [
+          78,
+          183,
+          208
+        ],
+        "min_occurrences": 3,
+        "whitelist": [
+          0,
+          1,
+          -1
+        ]
+      }
+    },
+    {
+      "smell_type": "FeatureEnvy",
+      "file_path": "sample_smelly_code.py",
+      "line_number": 220,
+      "severity": "medium",
+      "message": "Method 'get_best_selling_items' shows feature envy (foreign accesses: 4, self accesses: 7)",
+      "details": {
+        "method_name": "get_best_selling_items",
+        "class_name": "ReservationReporter",
+        "foreign_accesses": 4,
+        "self_accesses": 7,
+        "foreign_ratio": 0.5714285714285714,
+        "min_foreign_accesses": 3,
+        "foreign_access_ratio": 1.5,
+        "foreign_classes": [
+          "ExternalService"
+        ]
+      }
+    },
+    {
+      "smell_type": "FeatureEnvy",
+      "file_path": "sample_smelly_code.py",
+      "line_number": 237,
+      "severity": "medium",
+      "message": "Method 'get_guest_history' shows feature envy (foreign accesses: 4, self accesses: 7)",
+      "details": {
+        "method_name": "get_guest_history",
+        "class_name": "ReservationReporter",
+        "foreign_accesses": 4,
+        "self_accesses": 7,
+        "foreign_ratio": 0.5714285714285714,
+        "min_foreign_accesses": 3,
+        "foreign_access_ratio": 1.5,
+        "foreign_classes": [
+          "ExternalService"
+        ]
+      }
+    },
+    {
+      "smell_type": "FeatureEnvy",
+      "file_path": "sample_smelly_code.py",
+      "line_number": 256,
+      "severity": "medium",
+      "message": "Method 'get_top_guests' shows feature envy (foreign accesses: 2, self accesses: 3)",
+      "details": {
+        "method_name": "get_top_guests",
+        "class_name": "ReservationReporter",
+        "foreign_accesses": 2,
+        "self_accesses": 3,
+        "foreign_ratio": 0.6666666666666666,
+        "min_foreign_accesses": 3,
+        "foreign_access_ratio": 1.5,
+        "foreign_classes": [
+          "ExternalService"
+        ]
+      }
+    }
+  ],
+  "smells_by_type": {
+    "LongMethod": [
+      {
+        "smell_type": "LongMethod",
+        "file_path": "sample_smelly_code.py",
+        "line_number": 272,
+        "severity": "medium",
+        "message": "Method 'main' is too long (37 lines, max: 30)",
+        "details": {
+          "method_name": "main",
+          "line_count": 37,
+          "max_lines": 30,
+          "complexity": 1,
+          "max_complexity": 10
+        }
+      },
+      {
+        "smell_type": "LongMethod",
+        "file_path": "sample_smelly_code.py",
+        "line_number": 33,
+        "severity": "high",
+        "message": "Method 'process_reservation_and_order' is too long (118 lines, max: 30)",
+        "details": {
+          "method_name": "process_reservation_and_order",
+          "line_count": 118,
+          "max_lines": 30,
+          "complexity": 16,
+          "max_complexity": 10
+        }
+      },
+      {
+        "smell_type": "LongMethod",
+        "file_path": "sample_smelly_code.py",
+        "line_number": 33,
+        "severity": "high",
+        "message": "Method 'process_reservation_and_order' has high complexity (16, max: 10)",
+        "details": {
+          "method_name": "process_reservation_and_order",
+          "line_count": 118,
+          "max_lines": 30,
+          "complexity": 16,
+          "max_complexity": 10
+        }
+      }
+    ],
+    "GodClass": [
+      {
+        "smell_type": "GodClass",
+        "file_path": "sample_smelly_code.py",
+        "line_number": 6,
+        "severity": "medium",
+        "message": "Class 'RestaurantManager' is too large (208 lines, max: 200)",
+        "details": {
+          "class_name": "RestaurantManager",
+          "field_count": 0,
+          "max_fields": 15,
+          "method_count": 5,
+          "max_methods": 20,
+          "line_count": 208,
+          "max_lines": 200
+        }
+      }
+    ],
+    "DuplicatedCode": [
+      {
+        "smell_type": "DuplicatedCode",
+        "file_path": "sample_smelly_code.py",
+        "line_number": 169,
+        "severity": "medium",
+        "message": "Duplicated code detected between 'calculate_loyalty_reward' and 'apply_happy_hour_discount' (similarity: 0.88)",
+        "details": {
+          "function1": "calculate_loyalty_reward",
+          "function2": "apply_happy_hour_discount",
+          "function1_line": 169,
+          "function2_line": 188,
+          "similarity": 0.8823529411764706,
+          "min_similarity": 0.8,
+          "function1_lines": 19,
+          "function2_lines": 26
+        }
+      },
+      {
+        "smell_type": "DuplicatedCode",
+        "file_path": "sample_smelly_code.py",
+        "line_number": 220,
+        "severity": "medium",
+        "message": "Duplicated code detected between 'get_best_selling_items' and 'get_top_guests' (similarity: 0.80)",
+        "details": {
+          "function1": "get_best_selling_items",
+          "function2": "get_top_guests",
+          "function1_line": 220,
+          "function2_line": 256,
+          "similarity": 0.8,
+          "min_similarity": 0.8,
+          "function1_lines": 17,
+          "function2_lines": 16
+        }
+      }
+    ],
+    "LargeParameterList": [
+      {
+        "smell_type": "LargeParameterList",
+        "file_path": "sample_smelly_code.py",
+        "line_number": 33,
+        "severity": "high",
+        "message": "Method 'process_reservation_and_order' has too many parameters (27, max: 5)",
+        "details": {
+          "method_name": "process_reservation_and_order",
+          "parameter_count": 27,
+          "max_parameters": 5,
+          "parameters": [
+            "self",
+            "guest_id",
+            "table_id",
+            "reservation_time",
+            "party_size",
+            "special_requests",
+            "menu_items",
+            "dietary_restrictions",
+            "payment_method",
+            "loyalty_tier",
+            "discount_code",
+            "celebration_type",
+            "arrival_time",
+            "contact_phone",
+            "email_address",
+            "emergency_contact",
+            "special_instructions",
+            "group_name",
+            "corporate_account",
+            "vip_status",
+            "accessibility_needs",
+            "language_preference",
+            "communication_method",
+            "marketing_consent",
+            "data_sharing_consent",
+            "terms_accepted",
+            "id_verified"
+          ]
+        }
+      },
+      {
+        "smell_type": "LargeParameterList",
+        "file_path": "sample_smelly_code.py",
+        "line_number": 151,
+        "severity": "medium",
+        "message": "Method 'add_menu_item' has too many parameters (10, max: 5)",
+        "details": {
+          "method_name": "add_menu_item",
+          "parameter_count": 10,
+          "max_parameters": 5,
+          "parameters": [
+            "self",
+            "name",
+            "price",
+            "category",
+            "ingredients",
+            "prep_time",
+            "calories",
+            "allergens",
+            "portion_size",
+            "spice_level"
+          ]
+        }
+      }
+    ],
+    "MagicNumbers": [
+      {
+        "smell_type": "MagicNumbers",
+        "file_path": "sample_smelly_code.py",
+        "line_number": 293,
+        "severity": "medium",
+        "message": "Magic number '2' appears 4 times",
+        "details": {
+          "magic_number": 2,
+          "occurrences": 4,
+          "line_numbers": [
+            293,
+            76,
+            181,
+            206
+          ],
+          "min_occurrences": 3,
+          "whitelist": [
+            0,
+            1,
+            -1
+          ]
+        }
+      },
+      {
+        "smell_type": "MagicNumbers",
+        "file_path": "sample_smelly_code.py",
+        "line_number": 78,
+        "severity": "medium",
+        "message": "Magic number '3' appears 3 times",
+        "details": {
+          "magic_number": 3,
+          "occurrences": 3,
+          "line_numbers": [
+            78,
+            183,
+            208
+          ],
+          "min_occurrences": 3,
+          "whitelist": [
+            0,
+            1,
+            -1
+          ]
+        }
+      }
+    ],
+    "FeatureEnvy": [
+      {
+        "smell_type": "FeatureEnvy",
+        "file_path": "sample_smelly_code.py",
+        "line_number": 220,
+        "severity": "medium",
+        "message": "Method 'get_best_selling_items' shows feature envy (foreign accesses: 4, self accesses: 7)",
+        "details": {
+          "method_name": "get_best_selling_items",
+          "class_name": "ReservationReporter",
+          "foreign_accesses": 4,
+          "self_accesses": 7,
+          "foreign_ratio": 0.5714285714285714,
+          "min_foreign_accesses": 3,
+          "foreign_access_ratio": 1.5,
+          "foreign_classes": [
+            "ExternalService"
+          ]
+        }
+      },
+      {
+        "smell_type": "FeatureEnvy",
+        "file_path": "sample_smelly_code.py",
+        "line_number": 237,
+        "severity": "medium",
+        "message": "Method 'get_guest_history' shows feature envy (foreign accesses: 4, self accesses: 7)",
+        "details": {
+          "method_name": "get_guest_history",
+          "class_name": "ReservationReporter",
+          "foreign_accesses": 4,
+          "self_accesses": 7,
+          "foreign_ratio": 0.5714285714285714,
+          "min_foreign_accesses": 3,
+          "foreign_access_ratio": 1.5,
+          "foreign_classes": [
+            "ExternalService"
+          ]
+        }
+      },
+      {
+        "smell_type": "FeatureEnvy",
+        "file_path": "sample_smelly_code.py",
+        "line_number": 256,
+        "severity": "medium",
+        "message": "Method 'get_top_guests' shows feature envy (foreign accesses: 2, self accesses: 3)",
+        "details": {
+          "method_name": "get_top_guests",
+          "class_name": "ReservationReporter",
+          "foreign_accesses": 2,
+          "self_accesses": 3,
+          "foreign_ratio": 0.6666666666666666,
+          "min_foreign_accesses": 3,
+          "foreign_access_ratio": 1.5,
+          "foreign_classes": [
+            "ExternalService"
+          ]
+        }
+      }
+    ]
+  }
+}

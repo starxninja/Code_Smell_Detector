@@ -1,0 +1,39 @@
+language: "python"
+
+# which smells are enabled by default (can be overridden by CLI)
+LongMethod:
+  enabled: true
+  max_lines: 30
+  max_complexity: 10
+
+GodClass:
+  enabled: true
+  max_fields: 15
+  max_methods: 20
+  max_lines: 200
+
+DuplicatedCode:
+  enabled: true
+  min_similarity: 0.80
+  min_chunk_size: 3
+
+LargeParameterList:
+  enabled: true
+  max_parameters: 5
+
+MagicNumbers:
+  enabled: true
+  min_occurrences: 3
+  whitelist: [0, 1, -1]
+  min_value: 2
+  max_value: 1000
+
+FeatureEnvy:
+  enabled: true
+  min_foreign_accesses: 3
+  foreign_access_ratio: 1.5
+
+report:
+  format: "json" # json | txt
+  include_metrics: true
+  show_active_smells: true
