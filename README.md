@@ -44,23 +44,6 @@ pip install pyyaml flask
 pip install -r requirements.txt
 
 
-Project Structure
-textcode-smell-detector/
-│
-├── FlaskIntegrated.py     # Web server (Flask-based)
-├── CodeSmellDetector.py   # Core detection engine
-├── main.py                # CLI interface
-├── code_smell_detector_frontend.html  # Web interface HTML
-├── config.yaml            # Configuration file
-├── smelly_code.py         # Sample code with intentional smells
-├── test_smelly_code.py    # Unit tests
-├── docs/
-│   └── smells.md          # Documentation of intentional smells
-├── requirements.txt       # Python dependencies
-└── README.md              # This file
-Usage
-Web Interface (Recommended)
-
 Start the web server:
 textpython FlaskIntegrated.py
 
@@ -95,35 +78,6 @@ python main.py --output report.txt SmellyCode.py
 # Verbose output
 python main.py --verbose SmellyCode.py
 Command Line Options
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
